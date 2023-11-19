@@ -191,7 +191,7 @@ export const appRouter = router({
                 },
             })
 
-            // if (!file) throw new TRPCError({ code: 'NOT_FOUND' })
+            if (!file) throw new TRPCError({ code: 'NOT_FOUND' })
 
             return file
         }),
