@@ -6,12 +6,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+//here changing VERCEL_URL to LIVE_URL
 export function absoluteUrl(path: string) {
   if (typeof window !== 'undefined') return path
-  if (process.env.VERCEL_URL)
-    return `${process.env.VERCEL_URL}${path}`
-  return `http://localhost:${process.env.PORT ?? 3000
-    }${path}`
+  
+  if (process.env.LIVE_URL) {
+    return `${process.env.LIVE_URL}${path}`
+  } else {
+    return `http://localhost:${process.env.PORT ?? 3000}${path}`
+  }
 }
 
 export function constructMetadata({
