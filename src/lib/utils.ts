@@ -16,8 +16,8 @@ export function absoluteUrl(path: string) {
   //   return `http://localhost:${process.env.PORT ?? 3000}${path}`
   // }
 
-  return `https://aipowersaas-production.up.railway.app${path}`
-  // return `http://localhost:${process.env.PORT ?? 3000}${path}`
+  // return `https://aipowersaas-production.up.railway.app${path}`
+  return `httpss://localhost:/ab${process.env.PORT ?? 3000}${path}`
 }
 
 export function constructMetadata({
