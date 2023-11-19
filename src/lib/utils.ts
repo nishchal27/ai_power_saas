@@ -8,13 +8,16 @@ export function cn(...inputs: ClassValue[]) {
 
 //here changing VERCEL_URL to LIVE_URL
 export function absoluteUrl(path: string) {
-  if (typeof window !== 'undefined') return path
-  
-  if (process.env.LIVE_URL) {
-    return `https://${process.env.LIVE_URL}${path}`
-  } else {
-    return `http://localhost:${process.env.PORT ?? 3000}${path}`
-  }
+  if (typeof window !== 'undefined') return path  
+
+  // if (process.env.LIVE_URL) {
+  //   return `https://${process.env.LIVE_URL}${path}`
+  // } else {
+  //   return `http://localhost:${process.env.PORT ?? 3000}${path}`
+  // }
+
+  return `https://aipowersaas-production.up.railway.app${path}`
+  // return `http://localhost:${process.env.PORT ?? 3000}${path}`
 }
 
 export function constructMetadata({
