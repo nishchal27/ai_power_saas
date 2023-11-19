@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function absoluteUrl(path: string) {
   if (typeof window !== 'undefined') return path
   if (process.env.VERCEL_URL)
-    return `https://${process.env.VERCEL_URL}${path}`
+    return `${process.env.VERCEL_URL}${path}`
   return `http://localhost:${process.env.PORT ?? 3000
     }${path}`
 }
@@ -17,8 +17,8 @@ export function absoluteUrl(path: string) {
 export function constructMetadata({
   title = "Abhi-saas : the SaaS for students",
   description = "Abhi-saas is an open-source software to make chatting to your PDF files easy.",
-  image = "/thumbnail.png",
-  icons = "/favicon.ico",
+  image = "/public/thumbnail.png",
+  icons = "/public/favicon.ico",
   noIndex = false
 }: {
   title?: string
@@ -44,10 +44,10 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@joshtriedcoding"
+      creator: "@nishchal27dev"
     },
     icons,
-    metadataBase: new URL('https://quill-jet.vercel.app'),
+    metadataBase: new URL('https://aipowersaas-production.up.railway.app'),
     themeColor: '#FFF',
     ...(noIndex && {
       robots: {
