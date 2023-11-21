@@ -15,6 +15,7 @@ import { PLANS } from '@/config/stripe'
 const f = createUploadthing()
 
 const middleware = async () => {
+  console.log("middleware called");
   const { getUser } = getKindeServerSession()
   const user = getUser()
 
