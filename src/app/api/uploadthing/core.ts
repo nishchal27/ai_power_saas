@@ -36,6 +36,7 @@ const onUploadComplete = async ({
     url: string
   }
 }) => {
+  console.log("onuploadcomplete called",metadata, file);
   const isFileExist = await db.file.findFirst({
     where: {
       key: file.key,
